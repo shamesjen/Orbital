@@ -16,3 +16,5 @@ func Ping(ctx context.Context, c *app.RequestContext) {
 		"message": "pong",
 	})
 }
+
+

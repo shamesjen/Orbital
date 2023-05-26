@@ -4,6 +4,16 @@ package main
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
+
+	"context"
+	"log"
+	"time"
+
+	"Users/james/Documents/GitHub/orbital/reply.go"
+
+	"github.com/cloudwego/kitex-examples/hello/kitex_gen/api"
+	"github.com/cloudwego/kitex-examples/hello/kitex_gen/api/hello"
+	"github.com/cloudwego/kitex/client"
 )
 
 func main() {
@@ -11,4 +21,29 @@ func main() {
 
 	register(h)
 	h.Spin()
+
+
+	client, err := hello.NewClient("hello", client.WithHostPorts("0.0.0.0:8888"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	for {
+		req := &api.Request{Message: "kt is handsome"}
+		resp, err := client.Echo(context.Background(), req)
+		if err != nil {
+			log.Fatal(err)
+		}
+		log.Println(resp)
+		time.Sleep(time.Second)
+		addReq := &api.AddRequest{First: 512, Second: 512}
+		addResp, err := client.Add(context.Background(), addReq)
+		if err != nil {
+				log.Fatal(err)
+		}
+		log.Println(addResp)
+		time.Sleep(time.Second)
+	}
+
+
+
 }
