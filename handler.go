@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	api "test/kitex_gen/api"
+	api "github.com/shamesjen/Orbital/kitex_gen/api"
 )
 
 // TestImpl implements the last service interface defined in the IDL.

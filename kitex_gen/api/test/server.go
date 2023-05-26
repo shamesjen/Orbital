@@ -3,7 +3,7 @@ package test
 
 import (
 	server "github.com/cloudwego/kitex/server"
-	api "test/kitex_gen/api"
+	api "github.com/shamesjen/Orbital/kitex_gen/api"
 )
 
 // NewServer creates a server.Server with the given handler and options.

@@ -9,11 +9,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/shamesjen/Orbital/tree/main/kitex_gen/api"
-	"github.com/shamesjen/Orbital/tree/main/kitex_gen/api/test"
+	"github.com/shamesjen/Orbital/kitex_gen/api"
+	"github.com/shamesjen/Orbital/kitex_gen/api/test"
 
-	"github.com/cloudwego/kitex-examples/hello/kitex_gen/api"
-	"github.com/cloudwego/kitex-examples/hello/kitex_gen/api/hello"
 	"github.com/cloudwego/kitex/client"
 )
 
@@ -24,7 +22,7 @@ func main() {
 
 
 
-	client, err := hello.NewClient("hello", client.WithHostPorts("0.0.0.0:9000"))
+	client, err := test.NewClient("test", client.WithHostPorts("0.0.0.0:9000"))
 	if err != nil {
 		log.Fatal(err)
 	}

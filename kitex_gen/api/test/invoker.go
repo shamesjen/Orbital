@@ -4,7 +4,7 @@ package test
 
 import (
 	server "github.com/cloudwego/kitex/server"
-	api "test/kitex_gen/api"
+	api "github.com/shamesjen/Orbital/kitex_gen/api"
 )
 
 // NewInvoker creates a server.Invoker with the given handler and options.

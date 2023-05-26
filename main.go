@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	api "test/kitex_gen/api/test"
+	api "github.com/shamesjen/Orbital/kitex_gen/api/test"
 )
 
 func main() {
