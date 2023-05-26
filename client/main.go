@@ -20,13 +20,11 @@ func main() {
 
 	register(h)
 
-
-
 	client, err := test.NewClient("test", client.WithHostPorts("0.0.0.0:9000"))
 	if err != nil {
 		log.Fatal(err)
 	}
-	
+
 	req := &api.Request{Message: "kt is handsome"}
 	resp, err := client.Reply(context.Background(), req)
 	if err != nil {
@@ -35,7 +33,7 @@ func main() {
 	log.Println(resp)
 	time.Sleep(time.Second)
 
-	h.Spin()
-	
+	h.Spin() //need to replace this
+	//hello world
 
 }
