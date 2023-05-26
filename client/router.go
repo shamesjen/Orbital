@@ -4,7 +4,7 @@ package main
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
-	handler "test/client/biz/handler"
+	handler "github.com/shamesjen/Orbital/client/biz/handler"
 )
 
 // customizeRegister registers customize routers.

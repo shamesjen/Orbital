@@ -4,7 +4,7 @@ package main
 
 import (
 	"github.com/cloudwego/hertz/pkg/app/server"
-	router "test/client/biz/router"
+	router "github.com/shamesjen/Orbital/client/biz/router"
 )
 
 // register registers all routers.

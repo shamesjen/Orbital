@@ -9,7 +9,8 @@ import (
 	"log"
 	"time"
 
-	"Users/james/Documents/GitHub/orbital/reply.go"
+	"github.com/shamesjen/Orbital/tree/main/kitex_gen/api"
+	"github.com/shamesjen/Orbital/tree/main/kitex_gen/api/test"
 
 	"github.com/cloudwego/kitex-examples/hello/kitex_gen/api"
 	"github.com/cloudwego/kitex-examples/hello/kitex_gen/api/hello"
@@ -20,30 +21,23 @@ func main() {
 	h := server.Default()
 
 	register(h)
-	h.Spin()
 
 
-	client, err := hello.NewClient("hello", client.WithHostPorts("0.0.0.0:8888"))
+
+	client, err := hello.NewClient("hello", client.WithHostPorts("0.0.0.0:9000"))
 	if err != nil {
 		log.Fatal(err)
 	}
-	for {
-		req := &api.Request{Message: "kt is handsome"}
-		resp, err := client.Echo(context.Background(), req)
-		if err != nil {
-			log.Fatal(err)
-		}
-		log.Println(resp)
-		time.Sleep(time.Second)
-		addReq := &api.AddRequest{First: 512, Second: 512}
-		addResp, err := client.Add(context.Background(), addReq)
-		if err != nil {
-				log.Fatal(err)
-		}
-		log.Println(addResp)
-		time.Sleep(time.Second)
+	
+	req := &api.Request{Message: "kt is handsome"}
+	resp, err := client.Reply(context.Background(), req)
+	if err != nil {
+		log.Fatal(err)
 	}
+	log.Println(resp)
+	time.Sleep(time.Second)
 
-
+	h.Spin()
+	
 
 }
